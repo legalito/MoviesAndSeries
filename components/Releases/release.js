@@ -63,7 +63,7 @@ export default function Release() {
             className={styles.Myswiper}
           >
             {moviesData[0].map((movie) => (
-              <SwiperSlide className={styles.popular__container__card}>
+              <SwiperSlide className={styles.popular__container__card} key={movie.id}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.image}`}
                   alt={movie.title}
