@@ -70,7 +70,7 @@ export default function Hero() {
             ))}
           </div>
           <div className={styles.rating}>
-            <Image src="/static/img/Imdb-logo.jpg" width={70} height={40}/>
+            <img src="/static/img/Imdb-logo.jpg" width={70} height={40}/>
             <h2>{moviesData[0].rating}</h2>
           </div>
           <button>Watch Now</button>
