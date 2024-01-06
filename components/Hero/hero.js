@@ -70,7 +70,7 @@ export default function Hero() {
             ))}
           </div>
           <div className={styles.rating}>
-            <div width={70} height={40}></div>
+            <div></div>
             <h2>{moviesData[0].rating}</h2>
           </div>
           <button>Watch Now</button>
