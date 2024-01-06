@@ -1,27 +1,98 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html{
+  padding: 0;
+  margin: 0;
+}
+*{
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 10px 0  ;
+  padding: 0;
+}
+h1{
+  font-size: 60px;
+  font-weight: 700;
+}
+h2{
+  font-size: 35px;
+  font-weight: 500;
+}
+h3{
+  font-size: 30px;
+  font-weight: 700;
+}
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 10px;
+  width: fit-content;
+  border: 1px solid #fff;
+  border-radius: 15px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("../public/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100vw;
+  height: 100%;
+  background-color: black;
+
+}
+@media screen and (max-width: 768px){
+  body{
+    background-position: top;
+    background-size: 250%;
+  }
+}
+main{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  max-width: 1440px;
+}
+nav{
+  height: 60px;
+  display: flex;
+  max-width: 1440px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: rgba(0,0,0,0.5);
+}
+nav .logo{
+  height: auto;
+}
+nav div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 80px;
+}
+nav p{
+  font-size: 1rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 768px){
+  nav{
+    margin: 20px 10px;
+  }
+  nav div{
+    display: none;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}

@@ -1,0 +1,49 @@
+.release{
+    margin: 100px 0px;
+    .popular__container__card{
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        height: 300px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        .blurOverlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%; /* Hauteur du flou, ajustez selon vos besoins */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            backdrop-filter: blur(5px); /* Ajustez le flou selon vos besoins */
+        }
+        .popular__container__card__info{
+            padding: 20px;
+            h3{
+                color: white;
+                font-size: 1.5rem;
+                margin: 0;
+            }
+            
+        }
+        
+    }
+}
+
+@media screen and (max-width: 768px){
+    .release{
+        margin: 50px 20px;
+        .popular__container__card{
+            width: 100%;
+            height: 200px;
+            .popular__container__card__info{
+                h3{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

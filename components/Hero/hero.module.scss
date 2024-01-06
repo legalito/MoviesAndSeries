@@ -1,0 +1,45 @@
+.hero {
+    width: 40%;
+    margin: 50px 0;
+    h1{
+        text-transform: uppercase;
+    }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    h2:not(:last-child):after {
+      content: '|';
+        margin-left: 10px;
+        font-weight: 500;
+    }
+    img {
+      width: auto;
+      height: 40px;
+    }
+  }
+  button{
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: lighter;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 768px){
+    .hero{
+        width: 100%;
+        margin: 50px 20px;
+        h1{
+            font-size: 1.5rem;
+        }
+        div{
+            h2{
+                font-size: 1rem;
+            }
+        }
+    }
+}

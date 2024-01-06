@@ -1,0 +1,48 @@
+.release {
+  margin: 100px 0px;
+}
+.release .popular__container__card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+}
+.release .popular__container__card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+.release .popular__container__card .blurOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* Hauteur du flou, ajustez selon vos besoins */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* Ajustez le flou selon vos besoins */
+}
+.release .popular__container__card .popular__container__card__info {
+  padding: 20px;
+}
+.release .popular__container__card .popular__container__card__info h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .release {
+    margin: 50px 20px;
+  }
+  .release .popular__container__card {
+    width: 100%;
+    height: 200px;
+  }
+  .release .popular__container__card .popular__container__card__info h3 {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=release.module.css.map */

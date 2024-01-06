@@ -1,0 +1,14 @@
+.popular img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .popular {
+    margin: 50px 20px;
+  }
+  .popular img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=popular.module.css.map */

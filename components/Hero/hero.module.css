@@ -1,0 +1,44 @@
+.hero {
+  width: 40%;
+  margin: 50px 0;
+}
+.hero h1 {
+  text-transform: uppercase;
+}
+.hero div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero div h2:not(:last-child):after {
+  content: "|";
+  margin-left: 10px;
+  font-weight: 500;
+}
+.hero div img {
+  width: auto;
+  height: 40px;
+}
+.hero button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: 100%;
+    margin: 50px 20px;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero div h2 {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=hero.module.css.map */
