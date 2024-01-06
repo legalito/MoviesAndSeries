@@ -4,6 +4,12 @@
     h1{
         text-transform: uppercase;
     }
+    .rating{
+        div{
+            background-image: url('/public/static/img/Imdb-Logo.jpg');
+            background-size: contain;
+        }
+    }
   div {
     display: flex;
     align-items: center;

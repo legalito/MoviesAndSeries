@@ -5,6 +5,10 @@
 .hero h1 {
   text-transform: uppercase;
 }
+.hero .rating div {
+  background-image: url("/public/static/img/Imdb-Logo.jpg");
+  background-size: contain;
+}
 .hero div {
   display: flex;
   align-items: center;
