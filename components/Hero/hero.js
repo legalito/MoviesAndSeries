@@ -6,6 +6,7 @@ import styles from "./hero.module.scss";
 
 export default function Hero() {
   const [moviesData, setMoviesData] = useState([]); // Initialisez l'état local avec un tableau vide
+  const [background, setBackground] = useState([]);
   const options = {
     method: "GET",
     headers: {
@@ -22,6 +23,11 @@ export default function Hero() {
     return `${heures}h ${minutes}min`;
   }
 
+  //crée un random number entre 1 et 20
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,7 +35,7 @@ export default function Hero() {
           "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
           options
         );
-        const responseId = trendingResponse.data.results[0].id;
+        const responseId = trendingResponse.data.results[getRandomInt(20)].id;
         const movieDetailsResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${responseId}`,
           options
@@ -43,8 +49,16 @@ export default function Hero() {
           runtime: convertirEnHeuresEtMinutes(movieDetailsResponse.data.runtime),
           genre: movieDetailsResponse.data.genres,
         };
+        
+        const movieBackGroundResponse = await axios.get(`https://api.themoviedb.org/3/movie/${responseId}/images`, options);
+        const newBackground = {
+          background: movieBackGroundResponse.data.backdrops[0].file_path,
+        }
+        //permet de changer le background du body
+        //document.body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${newBackground.background})`;
 
         // Mettez à jour l'état avec les nouvelles données
+        setBackground(`url(https://image.tmdb.org/t/p/original/${newBackground.background}`);
         setMoviesData([newMovieData]);
       } catch (error) {
         console.log(error);
@@ -55,7 +69,9 @@ export default function Hero() {
   }, []); // Assurez-vous que le tableau de dépendances est vide si vous souhaitez exécuter l'effet une seule fois lors du montage
 
   // Utilisez l'état local moviesData dans le reste de votre composant
-
+  if(background !== null) {
+    document.body.style.backgroundImage = background;
+  }
   return (
     <>
       {moviesData.length > 0 ? (
