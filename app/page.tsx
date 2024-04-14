@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Hero from '../components/Hero/hero';
 import Popular from '../components/Popular/popular';
 import Release from '../components/Releases/release';

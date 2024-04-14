@@ -64,10 +64,12 @@ export default function Popular() {
           >
             {moviesData[0].map((movie) => (
               <SwiperSlide className={styles.popular__container__card} key={movie.id}>
+                <a href={`/movie/?idMovie=${movie.id}`}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.image}`}
                   alt={movie.title}
                 />
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>
