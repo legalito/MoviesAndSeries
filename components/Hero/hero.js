@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./hero.module.scss";
 
-export default function Hero() {
+export default function Hero(props) {
   const [moviesData, setMoviesData] = useState([]); // Initialisez l'état local avec un tableau vide
   const [background, setBackground] = useState([]);
   const options = {

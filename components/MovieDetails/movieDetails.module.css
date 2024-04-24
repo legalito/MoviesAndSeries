@@ -5,4 +5,39 @@
   background-repeat: no-repeat !important;
   background-size: cover !important; /* Redimensionne l'image pour couvrir tout le conteneur */
   background-position: center !important; /* Centre l'image dans le conteneur */
+}
+.ContainerMovie > div {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.ContainerMovie > div div:first-child {
+  align-items: flex-start;
+  width: 60%;
+}
+.ContainerMovie > div h1 {
+  padding-top: 100px;
+}
+.ContainerMovie > div .genres {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.ContainerMovie > div .genres p {
+  margin-right: 10px;
+  background-color: #f5f5f5;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.ContainerMovie .images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.ContainerMovie .images img {
+  width: 30%;
+  margin-bottom: 20px;
 }/*# sourceMappingURL=movieDetails.module.css.map */
