@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 
-export default function Popular() {
+export default function Popular(props) {
   const [moviesData, setMoviesData] = useState([]); // Initialisez l'état local avec un tableau vide
   const options = {
     method: "GET",
@@ -22,7 +22,7 @@ export default function Popular() {
     const fetchData = async () => {
       try {
         const trendingResponse = await axios.get(
-          " https://api.themoviedb.org/3/movie/popular",
+          `https://api.themoviedb.org/3/${props.type}/popular`,
           options
         );
         const responseIds = trendingResponse.data.results.map((result) => ({
@@ -30,7 +30,6 @@ export default function Popular() {
           title: result.title,
           image: result.poster_path,
         }));
-        console.log("responseId", responseIds);
 
         setMoviesData([responseIds]);
       } catch (error) {
@@ -41,7 +40,6 @@ export default function Popular() {
     fetchData();
   }, []);
 
-  console.log("test", moviesData.length);
 
   return (
     <div className={styles.popular}>

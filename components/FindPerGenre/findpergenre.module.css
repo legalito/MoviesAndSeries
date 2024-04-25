@@ -1,0 +1,41 @@
+.findpergenre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.findpergenre select {
+  color: black;
+}
+.findpergenre select option {
+  color: black;
+}
+
+.listFilm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listFilm > div {
+  width: 300px;
+  margin: 10px;
+}
+
+.listFilm img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.listFilm h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.listFilm p {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #555;
+}/*# sourceMappingURL=findpergenre.module.css.map */

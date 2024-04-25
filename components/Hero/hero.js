@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./hero.module.scss";
 
 export default function Hero(props) {
-  const [moviesData, setMoviesData] = useState([]); // Initialisez l'état local avec un tableau vide
+  const [moviesData, setMoviesData] = useState(); // Initialisez l'état local avec un tableau vide
   const [background, setBackground] = useState([]);
   const options = {
     method: "GET",
@@ -31,12 +31,12 @@ export default function Hero(props) {
     const fetchData = async () => {
       try {
         const trendingResponse = await axios.get(
-          "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
+          `https://api.themoviedb.org/3/trending/${props.type}/day?language=en-US`,
           options
         );
         const responseId = trendingResponse.data.results[getRandomInt(20)].id;
         const movieDetailsResponse = await axios.get(
-          `https://api.themoviedb.org/3/movie/${responseId}`,
+          `https://api.themoviedb.org/3/${props.type}/${responseId}`,
           options
         );
         const newMovieData = {
@@ -49,7 +49,7 @@ export default function Hero(props) {
           genre: movieDetailsResponse.data.genres,
         };
         
-        const movieBackGroundResponse = await axios.get(`https://api.themoviedb.org/3/movie/${responseId}/images`, options);
+        const movieBackGroundResponse = await axios.get(`https://api.themoviedb.org/3/${props.type}/${responseId}/images`, options);
         const newBackground = {
           background: movieBackGroundResponse.data.backdrops[0].file_path,
         }
@@ -58,7 +58,9 @@ export default function Hero(props) {
 
         // Mettez à jour l'état avec les nouvelles données
         setBackground(`url(https://image.tmdb.org/t/p/original/${newBackground.background}`);
-        setMoviesData([newMovieData]);
+        setMoviesData(newMovieData);
+        document.body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${newBackground.background}`;
+
       } catch (error) {
         console.log(error);
       }
@@ -67,26 +69,22 @@ export default function Hero(props) {
     fetchData();
   }, []); // Assurez-vous que le tableau de dépendances est vide si vous souhaitez exécuter l'effet une seule fois lors du montage
 
-  // Utilisez l'état local moviesData dans le reste de votre composant
-  if(background !== null) {
-    document.body.style.backgroundImage = background;
-  }
+    
   return (
     <>
-      {moviesData.length > 0 ? (
+      {moviesData ? (
         <div className={styles.hero}>
           <p>
-            {new Date(moviesData[0].releaseDate).getFullYear()} | {moviesData[0].runtime}
+            {new Date(moviesData.releaseDate).getFullYear()} | {moviesData.runtime}
           </p>
-          <h1>{moviesData[0].title}</h1>
+          <h1>{moviesData.title}</h1>
           <div>
-            {moviesData[0].genre.map((genre, index) => (
+            {moviesData.genre.map((genre, index) => (
               <h2 key={index}>{genre.name}</h2>
             ))}
           </div>
           <div className={styles.rating}>
-            <div></div>
-            <h2>{moviesData[0].rating}</h2>
+            <h2>{moviesData.rating}</h2>
           </div>
           <button>Watch Now</button>
         </div>

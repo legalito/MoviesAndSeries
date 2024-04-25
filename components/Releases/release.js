@@ -30,7 +30,6 @@ export default function Release() {
           image: result.poster_path,
           genre: result.genres,
         }));
-        console.log("responseId", responseIds);
 
         setMoviesData([responseIds]);
       } catch (error) {
@@ -41,7 +40,6 @@ export default function Release() {
     fetchData();
   }, []);
 
-  console.log("test", moviesData.length);
 
   return (
     <div className={styles.release}>

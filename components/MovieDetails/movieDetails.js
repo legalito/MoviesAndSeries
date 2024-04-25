@@ -52,6 +52,8 @@ export default function MovieDetails() {
         };
         console.log("finalData", finalData);
         setMoviesData([finalData]);
+        document.body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${finalData.backdrop_path}`;
+
       } catch (error) {
         console.log(error);
       }
@@ -66,11 +68,7 @@ export default function MovieDetails() {
     <>
       {moviesData.length > 0 && (
         <div
-          className={styles.ContainerMovie}
-          style={{
-            background: `url(https://image.tmdb.org/t/p/original${moviesData[0].backdrop_path})`,
-          }}
-        >
+          className={styles.ContainerMovie}>
           <div>
             <div>
               <h1>{moviesData[0].original_title}</h1>
