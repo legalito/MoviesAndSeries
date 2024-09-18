@@ -66,47 +66,47 @@ export default function MovieDetails() {
   }, []); // Empty dependency array to ensure this effect runs only once
   return (
     <>
-      {moviesData.length > 0 && (
-        <div
-          className={styles.ContainerMovie}>
-          <div>
-            <div>
-              <h1>{moviesData[0].original_title}</h1>
-              <div>
-                <h2>{moviesData[0].title}</h2>
-                <h2>{moviesData[0].note}</h2>
-                <p>{moviesData[0].overview}</p>
-                <div className={styles.genres}>
-                {moviesData[0].genres.map((genre, index) => (
-                  <p key={index}>{genre.name}</p>
-                ))
-                }
-
-                </div>
-              </div>
-              <iframe
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${moviesData[0].video}`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className={styles.images}>
-              {moviesData[0].images.slice(0,9).map((image, index) => (
-                <img
-                  key={index}
-                  src={`https://image.tmdb.org/t/p/original${image.file_path}`}
-                  alt={image.file_path}
-                />
+  {moviesData.length > 0 && (
+    <div className={styles["movie-container"]}>
+      <div className={styles["movie-container__content"]}>
+        <div className={styles["movie-container__header"]}>
+          <h1 className={styles["movie-container__title"]}>{moviesData[0].original_title}</h1>
+          <div className={styles["movie-container__details"]}>
+            <h2 className={styles["movie-container__subtitle"]}>{moviesData[0].title}</h2>
+            <h2 className={styles["movie-container__rating"]}>{moviesData[0].note}</h2>
+            <p className={styles["movie-container__description"]}>{moviesData[0].overview}</p>
+            <div className={styles["movie-container__genres"]}>
+              {moviesData[0].genres.map((genre, index) => (
+                <p className={styles["movie-container__genre"]} key={index}>{genre.name}</p>
               ))}
-              </div>
+            </div>
+          </div>
+          <div className={styles["movie-container__iframe-wrapper"]}>
+            <iframe
+              src={`https://www.youtube.com/embed/${moviesData[0].video}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className={styles["movie-container__iframe"]}
+            ></iframe>
           </div>
         </div>
-      )}
-    </>
+        <div className={styles["movie-container__images"]}>
+          {moviesData[0].images.slice(0, 9).map((image, index) => (
+            <img
+              key={index}
+              className={styles["movie-container__image"]}
+              src={`https://image.tmdb.org/t/p/original${image.file_path}`}
+              alt={image.file_path}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+</>
+
   );
 }

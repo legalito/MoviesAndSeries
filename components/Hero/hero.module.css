@@ -1,50 +1,79 @@
 .hero {
   width: 40%;
-  margin: 50px 0;
+  margin: var(--spacing-lg) 0;
 }
-.hero h1 {
+.hero__info {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-sm);
+}
+.hero__title {
   text-transform: uppercase;
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-md);
 }
-.hero .rating div {
+.hero__genres {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+.hero__genres .hero__genre {
+  font-size: var(--font-size-h2);
+}
+.hero__genres .hero__genre:not(:last-child)::after {
+  content: "|";
+  margin-left: var(--spacing-xs);
+  font-weight: 500;
+}
+.hero__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+.hero__ratingImage {
   width: 70px;
   height: 40px;
   background-image: url("../../public/static/img/Imdb-Logo.png");
   background-size: contain;
+  background-repeat: no-repeat;
 }
-.hero div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.hero__ratingScore {
+  font-size: var(--font-size-h2);
 }
-.hero div h2:not(:last-child):after {
-  content: "|";
-  margin-left: 10px;
-  font-weight: 500;
-}
-.hero div img {
-  width: auto;
-  height: 40px;
-}
-.hero button {
+.hero__button {
   background-color: transparent;
-  border: 1px solid #fff;
-  border-radius: 15px;
-  color: #fff;
-  font-size: 16px;
-  padding: 10px 20px;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius-large);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
   font-weight: lighter;
-  margin-top: 10px;
+  margin-top: var(--spacing-sm);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero__button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+.hero__loading {
+  font-size: var(--font-size-h2);
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 768px) {
   .hero {
     width: 100%;
-    margin: 50px 20px;
+    margin: var(--spacing-lg) var(--spacing-sm);
   }
-  .hero h1 {
-    font-size: 1.5rem;
+  .hero__title {
+    font-size: var(--font-size-h3);
   }
-  .hero div h2 {
-    font-size: 1rem;
+  .hero__genres__genre {
+    font-size: var(--font-size-base);
+  }
+  .hero__button {
+    font-size: var(--font-size-base);
   }
 }/*# sourceMappingURL=hero.module.css.map */

@@ -1,53 +1,95 @@
 .hero {
-    width: 40%;
-    margin: 50px 0;
-    h1{
-        text-transform: uppercase;
-    }
-    .rating{
-        div{
-            width: 70px;
-            height: 40px;
-            background-image: url('../../public/static/img/Imdb-Logo.png');
-            background-size: contain;
-        }
-    }
-  div {
+  width: 40%;
+  margin: var(--spacing-lg) 0;
+
+  &__info {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--spacing-md);
+  }
+
+  &__genres {
     display: flex;
     align-items: center;
-    gap: 10px;
-    h2:not(:last-child):after {
-      content: '|';
-        margin-left: 10px;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+
+    .hero__genre {
+      font-size: var(--font-size-h2);
+
+      &:not(:last-child)::after {
+        content: '|';
+        margin-left: var(--spacing-xs);
         font-weight: 500;
-    }
-    img {
-      width: auto;
-      height: 40px;
+      }
     }
   }
-  button{
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+
+    &Image {
+      width: 70px;
+      height: 40px;
+      background-image: url('../../public/static/img/Imdb-Logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &Score {
+      font-size: var(--font-size-h2);
+    }
+  }
+
+  &__button {
     background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    border-radius: var(--border-radius-large);
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) var(--spacing-md);
     font-weight: lighter;
-    margin-top: 10px;
+    margin-top: var(--spacing-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: var(--text-color);
+      color: var(--background-color);
+    }
+  }
+
+  &__loading {
+    font-size: var(--font-size-h2);
+    color: var(--text-color);
   }
 }
-@media screen and (max-width: 768px){
-    .hero{
-        width: 100%;
-        margin: 50px 20px;
-        h1{
-            font-size: 1.5rem;
-        }
-        div{
-            h2{
-                font-size: 1rem;
-            }
-        }
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: 100%;
+    margin: var(--spacing-lg) var(--spacing-sm);
+
+    &__title {
+      font-size: var(--font-size-h3);
     }
+
+    &__genres {
+      &__genre {
+        font-size: var(--font-size-base);
+      }
+    }
+
+    &__button {
+      font-size: var(--font-size-base);
+    }
+  }
 }

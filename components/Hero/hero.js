@@ -72,25 +72,27 @@ export default function Hero(props) {
     
   return (
     <>
-      {moviesData ? (
-        <div className={styles.hero}>
-          <p>
-            {new Date(moviesData.releaseDate).getFullYear()} | {moviesData.runtime}
-          </p>
-          <h1>{moviesData.title}</h1>
-          <div>
-            {moviesData.genre.map((genre, index) => (
-              <h2 key={index}>{genre.name}</h2>
-            ))}
-          </div>
-          <div className={styles.rating}>
-            <h2>{moviesData.rating}</h2>
-          </div>
-          <button>Watch Now</button>
-        </div>
-      ) : (
-        <p>Chargement en cours...</p>
-      )}
-    </>
+  {moviesData ? (
+    <div className={styles.hero}>
+      <p className={styles.hero__info}>
+        {new Date(moviesData.releaseDate).getFullYear()} | {moviesData.runtime}
+      </p>
+      <h1 className={styles.hero__title}>{moviesData.title}</h1>
+      <div className={styles.hero__genres}>
+        {moviesData.genre.map((genre, index) => (
+          <h2 key={index} className={styles.hero__genre}>{genre.name}</h2> 
+        ))}
+      </div>
+      <div className={styles.hero__rating}>
+        <div className={styles.hero__ratingImage}></div>
+        <h3 className={styles.hero__ratingScore}>{moviesData.rating}</h3>
+      </div>
+      <button className={styles.hero__button}>Watch Now</button>
+    </div>
+  ) : (
+    <p className={styles.hero__loading}>Chargement en cours...</p>
+  )}
+</>
+
   );
 }

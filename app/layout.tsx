@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import './reset.css';
+
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,8 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
         <nav>
+          <Link href="/">
           <Image
             src="/hbo-max-ctr.png"
             width={100}
@@ -27,6 +29,7 @@ export default function RootLayout({
             alt="logo"
             className="logo"
           />
+          </Link>
           <div>
             <Link href="/">
                 <p>Movies</p>

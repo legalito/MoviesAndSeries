@@ -59,45 +59,54 @@ export default function FindPerGenre(props) {
     fetchData();
   }, []);
 
-  return (
+  return ( 
     <>
-      <div className={styles.findpergenre}>
-        {genresData.length > 0 ? (
-          <>
-            <div>
-              <h2>Find per genre</h2>
-              <select onChange={handleGenreChange} value={selectedGenre}>
-                
-                {genresData.map((genre) => (
-                  <option key={genre.id} value={genre.id}>
-                    {genre.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </>
-        ) : (
-          <h2>Loading...</h2>
-        )}
-      </div>
-      <div>
-        {dataByGenre.length > 0 ? (
-          <div className={styles.listFilm}>
-            {dataByGenre.map((data) => (
-              <div key={data.id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
-                  alt={data.title}
-                />
-                <h2>{data.title}</h2>
-                <p>{data.overview}</p>
-              </div>
+  <div className={styles['find-per-genre']}>
+    {genresData.length > 0 ? (
+      <>
+        <div className={styles['find-per-genre__container']}>
+          <h2 className={styles['find-per-genre__title']}>Find per genre</h2>
+          <select
+            onChange={handleGenreChange}
+            value={selectedGenre}
+            className={styles['find-per-genre__select']}
+          >
+            {genresData.map((genre) => (
+              <option
+                key={genre.id}
+                value={genre.id}
+                className={styles['find-per-genre__option']}
+              >
+                {genre.name}
+              </option>
             ))}
+          </select>
+        </div>
+      </>
+    ) : (
+      <h2 className={styles['find-per-genre__loading']}>Loading...</h2>
+    )}
+  </div>
+  <div className={styles['list-film']}>
+    {dataByGenre.length > 0 ? (
+      <div className={styles['list-film__grid']}>
+        {dataByGenre.map((data) => (
+          <div key={data.id} className={styles['list-film__item']}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
+              alt={data.title}
+              className={styles['list-film__image']}
+            />
+            <h3 className={styles['list-film__title']}>{data.title}</h3>
+            <p className={styles['list-film__overview']}>{data.overview}</p> 
           </div>
-        ) : (
-          <h2>Loading...</h2>
-        )}
+        ))}
       </div>
-    </>
+    ) : (
+      <h2 className={styles['list-film__loading']}>Loading...</h2>
+    )}
+  </div>
+</>
+
   );
 }

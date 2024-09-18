@@ -1,41 +1,88 @@
-.findpergenre {
+/* Partie Find per Genre */
+.find-per-genre {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
-.findpergenre select {
-  color: black;
-}
-.findpergenre select option {
-  color: black;
-}
-
-.listFilm {
+.find-per-genre__container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+.find-per-genre__title {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-sm);
+}
+.find-per-genre__select {
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  transition: border-color 0.3s ease;
+}
+.find-per-genre__select:focus {
+  border-color: var(--primary-color);
+}
+.find-per-genre__option {
+  color: var(--text-color);
+}
+.find-per-genre__loading {
+  font-size: var(--font-size-h2);
 }
 
-.listFilm > div {
-  width: 300px;
-  margin: 10px;
+/* Partie List Film */
+/* Partie List Film */
+.list-film {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-
-.listFilm img {
+.list-film__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: var(--spacing-lg);
+  transition: all 0.3s ease;
+  justify-content: center;
+}
+.list-film__item {
+  transition: transform 0.3s ease;
+}
+.list-film__item:hover {
+  transform: scale(1.05);
+}
+.list-film__image {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius-large);
+  transition: transform 0.3s ease;
+}
+.list-film__image:hover {
+  transform: scale(1.02);
+}
+.list-film__title {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-h3);
+  color: var(--heading-color);
+}
+.list-film__overview {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+}
+.list-film__loading {
+  font-size: var(--font-size-h2);
+  margin-top: var(--spacing-lg);
 }
 
-.listFilm h2 {
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-.listFilm p {
-  margin-top: 5px;
-  font-size: 1rem;
-  color: #555;
+/* Responsive */
+@media (max-width: 768px) {
+  .list-film__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
 }/*# sourceMappingURL=findpergenre.module.css.map */
