@@ -50,7 +50,8 @@
   }
 
   &__button {
-    background-color: transparent;
+    --text-color : #fff;
+    background-color: transparent !important;
     border: 1px solid var(--text-color);
     border-radius: var(--border-radius-large);
     color: var(--text-color);
@@ -62,6 +63,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
+      --text-color : transparent;
       background-color: var(--text-color);
       color: var(--background-color);
     }

@@ -20,8 +20,7 @@
   padding-top: var(--padding-top-h1);
 }
 .movie-container__details {
-  display: flex;
-  flex-direction: column;
+  --stack-align: flex-start;
 }
 .movie-container__subtitle, .movie-container__rating {
   font-size: clamp(1rem, 2vw, 1.5rem);

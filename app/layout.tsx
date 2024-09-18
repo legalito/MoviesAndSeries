@@ -4,6 +4,8 @@ import Link from "next/link";
 import './reset.css';
 
 import "./globals.css";
+import "./styles/compositions/flex.css";
+import "./styles/compositions/grid.css";
 
 
 

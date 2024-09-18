@@ -71,7 +71,7 @@ export default function MovieDetails() {
       <div className={styles["movie-container__content"]}>
         <div className={styles["movie-container__header"]}>
           <h1 className={styles["movie-container__title"]}>{moviesData[0].original_title}</h1>
-          <div className={styles["movie-container__details"]}>
+          <div className={`${styles["movie-container__details"]} stack`}>
             <h2 className={styles["movie-container__subtitle"]}>{moviesData[0].title}</h2>
             <h2 className={styles["movie-container__rating"]}>{moviesData[0].note}</h2>
             <p className={styles["movie-container__description"]}>{moviesData[0].overview}</p>

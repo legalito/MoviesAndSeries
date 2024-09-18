@@ -38,14 +38,15 @@
 /* Partie List Film */
 /* Partie List Film */
 .list-film {
+  --text-color:#fff;
+  --heading-color: #fff;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 .list-film__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: var(--spacing-lg);
+  --grid-min-column-width: 200px;
+  --grid-gap: var(--spacing-lg);
   transition: all 0.3s ease;
   justify-content: center;
 }
