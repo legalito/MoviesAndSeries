@@ -6,6 +6,7 @@ import './reset.css';
 import "./globals.css";
 import "./styles/compositions/flex.css";
 import "./styles/compositions/grid.css";
+import "./styles/compositions/gridDynamique.css";
 
 
 

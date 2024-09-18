@@ -99,7 +99,7 @@
 @media (max-width: 768px) {
   .list-film {
     &__grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  // Ajuste les colonnes pour les petits écrans
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  // Ajuste les colonnes pour les petits écrans
       gap: var(--spacing-md);  // Moins d'espace entre les items sur mobile
     }
   }

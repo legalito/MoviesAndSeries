@@ -89,7 +89,7 @@ export default function FindPerGenre(props) {
   </div>
   <div className={styles['list-film']}>
     {dataByGenre.length > 0 ? (
-      <div className={`${styles['list-film__grid']} grid-container`}>
+      <div className={`${styles['list-film__grid']} grid-templates-3`}>
         {dataByGenre.map((data) => (
           <div key={data.id} className={styles['list-film__item']}>
             <img

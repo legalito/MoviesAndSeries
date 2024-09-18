@@ -1,0 +1,17 @@
+// Variables pour la configuration de la grille
+$grid-gap: 1rem; // Espacement entre les éléments de la grille
+$max-columns: 12; // Nombre maximum de colonnes générées
+
+// Mixin pour générer une grille avec un nombre de colonnes spécifique
+@mixin generate-grid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $grid-gap;
+}
+
+// Boucle pour générer les classes dynamiques de grille (de 1 à $max-columns colonnes)
+@for $i from 1 through $max-columns {
+  .grid-templates-#{$i} {
+    @include generate-grid($i);
+  }
+}

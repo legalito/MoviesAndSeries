@@ -83,7 +83,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .list-film__grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing-md);
   }
 }/*# sourceMappingURL=findpergenre.module.css.map */
