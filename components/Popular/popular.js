@@ -48,10 +48,14 @@ export default function Popular(props) {
           <h2>Popular Collections</h2>
           <Swiper
             breakpoints={{
+              '375': {
+                slidesPerView: 1,
+              },
                 '760': {
-                    slidesPerView: 6,
+                    slidesPerView: 2,
                     spaceBetween: 20,
                 }
+                
             }
             }
             spaceBetween={15}
